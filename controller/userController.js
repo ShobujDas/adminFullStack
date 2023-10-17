@@ -1,8 +1,8 @@
 
 const UserModel = require("../model/userModel");
 
-const {hashPassword,comparePassword} = require('../helper/userHelper')
-const JWT = require('jsonwebtoken');
+// const {hashPassword,comparePassword} = require('../helper/userHelper')
+// const JWT = require('jsonwebtoken');
 
 
 
@@ -24,10 +24,7 @@ exports.addUserController = async (req,res)=>{
             return res.status(500).send({ error: "role is Require" });
           case !password:
             return res.status(500).send({ error: "password is Require" });
-        //   case photo && photo.size > 1000000:
-        //     return res
-        //       .status(500)
-        //       .send({ error: "Photo is Required and should be less then 1mb " });
+        
         }
     
         const UserADD = await new UserModel({
